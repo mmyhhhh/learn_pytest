@@ -1,0 +1,6 @@
+. webtest/testcases/test_loginpytest.py::TestLogin::test_login_1[请输入密码]
+. webtest/testcases/test_loginpytest.py::TestLogin::test_login_1[请输入正确的手机号]
+. webtest/testcases/test_loginpytest.py::TestLogin::test_login_1[请输入手机号]
+. webtest/testcases/test_loginpytest.py::TestLogin::test_login_2[data0]
+. webtest/testcases/test_loginpytest.py::TestLogin::test_login_2[data1]
+. webtest/testcases/test_loginpytest.py::TestLogin::test_login_3[data0]

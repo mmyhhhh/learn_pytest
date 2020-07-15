@@ -1,0 +1,48 @@
+. testcases/test_loginpytest.py::TestLogin::test_login_3_1
+F testcases/test_loginpytest.py::TestLogin::test_login_1_1
+ self = <webtest.testcases.test_loginpytest.TestLogin testMethod=test_login_1_1>
+ data = {'expected': 'ÇëÊäÈëÃÜÂë', 'phone': '18684720553', 'pwd': ''}
+ 
+     @data(*data_login.incorrect_data1)
+     def test_login_1(self,data):
+         print(data)
+ >       self.loginpage.submit_login(data['phone'],data['pwd'])
+ 
+ testcases\test_loginpytest.py:46: 
+ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+ pages\loginpage.py:26: in submit_login
+     self.ele_phone.send_keys(phone)
+ pages\loginpage.py:19: in ele_phone
+     return self.get_element_visibility(self.phone_locator)
+ pages\basepage.py:23: in get_element_visibility
+     raise e
+ pages\basepage.py:20: in get_element_visibility
+     return WebDriverWait(self.driver,timeout).until(EC.visibility_of_element_located(locator))
+ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+ 
+ self = <selenium.webdriver.support.wait.WebDriverWait (session="7e5fd103a56e1954734c58b5272e0cfa")>
+ method = <selenium.webdriver.support.expected_conditions.visibility_of_element_located object at 0x0000000004330780>
+ message = ''
+ 
+     def until(self, method, message=''):
+         """Calls the method provided with the driver as an argument until the \
+         return value is not False."""
+         screen = None
+         stacktrace = None
+     
+         end_time = time.time() + self._timeout
+         while True:
+             try:
+                 value = method(self._driver)
+                 if value:
+                     return value
+             except self._ignored_exceptions as exc:
+                 screen = getattr(exc, 'screen', None)
+                 stacktrace = getattr(exc, 'stacktrace', None)
+             time.sleep(self._poll)
+             if time.time() > end_time:
+                 break
+ >       raise TimeoutException(message, screen, stacktrace)
+ E       selenium.common.exceptions.TimeoutException: Message:
+ 
+ D:\python\lib\site-packages\selenium\webdriver\support\wait.py:80: TimeoutException
